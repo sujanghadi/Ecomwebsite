@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<form action="/" method="POST">
+    {% csrf_token %}
+    <br>
+<div class="form-group col-md-6">
+    <label for="exampleFormControlInput1">Category Type</label>
+    <br>
+    {{form.Cname}}
+
+    <input type="submit" value="submit">
+  </div>
+    
+    </form>
+{% endblock %}

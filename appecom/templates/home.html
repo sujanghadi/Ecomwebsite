@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+  .card-img-top {
+      height: 200px;
+      }
+</style>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-3">
+
+        <h1 class="my-4">Shop Name</h1>
+        <div class="list-group">
+          {% for i in categorylist %}
+          <a href="#" class="list-group-item">{{i.Cname}}</a>
+          {% endfor %}
+         
+        </div>
+
+      </div>
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+
+        {% include 'corousal.html' %}
+        
+
+        <div class="row">
+          {% for i in productlist %}
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="{{i.Image.url}}" alt="{{i.Image}}"></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href=>{{i.Name}}</a>
+                </h4>
+                <h5>{{i.Price}}</h5>
+                <p class="card-text">{{i.descriptions}}</p>
+                {% if request.session.Username is not None %}
+                <a href="{% url 'updateproduct' i.id %}">Update</a>
+                <a href="{% url 'deleteproduct' i.id %}">delete</a>
+                {% endif %}
+               
+              </div>
+              <div class="card-footer">
+                <a class="btn btn-primary" href="cart" role="button">Add to cart</a>
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+          
+
+          
+
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+  {% endblock %}
+
+
+  

@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<br>
+<div class="container">
+<div class="row justify-content-center">
+                    <div class="col-md-5">
+                        <div class="card">
+                            <div class="card-header"><center>Products</center></div>
+                            <div class="card-body">
+
+                                <form class="form-horizontal" method="POST" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                    <div class="form-group">
+                                        <label for="name" class="cols-sm-2 control-label">Name of Products</label>
+                                        <div class="cols-sm-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                                {{form.Name}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Price" class="cols-sm-2 control-label">Price</label>
+                                        <div class="cols-sm-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                                {{form.Price}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Discounted_price" class="cols-sm-2 control-label">Discounted_price</label>
+                                        <div class="cols-sm-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                                                {{form.Discounted_price}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="descriptions" class="cols-sm-2 control-label">descriptions</label>
+                                        <div class="cols-sm-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                                {{form.descriptions}} 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Cname" class="cols-sm-2 control-label">Category name</label>
+                                        <div class="cols-sm-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                                {{form.Cname}}
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="Cname" class="cols-sm-2 control-label">Images</label>
+                                        <div class="cols-sm-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                                {{form.Image}}
+                                        </div>
+                                    </div>
+                                    <br>
+                               
+                                    <div class="form-group ">
+                                        <input type="submit" class="btn btn-primary btn-lg btn-block login-button">
+                                    </div>
+                                    <div class="login-register">
+                                        
+                                        <a href="">Update</a><br>
+                                        <a href="">Delete</a>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+</div>
+</div>
+
+{% endblock %}
